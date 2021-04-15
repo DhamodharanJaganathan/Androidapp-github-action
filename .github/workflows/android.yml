@@ -19,10 +19,11 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+        
     - name: Run Android Linter
       run: ./gradlew lintStagingDebug
         
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
