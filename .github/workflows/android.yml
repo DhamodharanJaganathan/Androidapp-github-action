@@ -19,6 +19,12 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
+    - name: Run koltin lint
+    run: ./gradlew ktlintStagingDebugCheck
+
+    - name: Run Unit Tests
+    run: ./gradlew testStagingDebugUnitTest
+        
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
